@@ -1,7 +1,7 @@
 apiVersion: v2
 name: video-search-and-summarization
 description: A Helm chart for Video Search and Summarization
-icon: https://avatars.githubusercontent.com/u/33164907
+icon: https://avatars.githubusercontent.com/u/178940881
 type: application
 version: 0.1.0
 appVersion: "1.0.0"
