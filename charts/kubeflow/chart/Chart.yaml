@@ -3,6 +3,7 @@ name: kubeflow
 version: 0.1.0
 type: application
 icon: https://avatars.githubusercontent.com/u/33164907
+description: Kubeflow is an open, community driven project to make it easy to deploy and manage an ML stack on Kubernetes
 maintainers:
   - name: mahdi khashan
     email: mahdikhashan1@gmail.com

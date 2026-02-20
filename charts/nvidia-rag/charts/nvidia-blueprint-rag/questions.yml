@@ -1,0 +1,144 @@
+categories:
+- name: "RAG Server Configuration"
+  class: "default"
+- name: "API Keys"
+  class: "default"
+- name: "Models"
+  class: "default"
+- name: "Components"
+  class: "default"
+- name: "Ingestor"
+  class: "default"
+
+questions:
+# Basic Configuration
+- variable: image.tag
+  label: "RAG Server Version"
+  description: "Version of the RAG Server image"
+  type: string
+  default: "2.4.0"
+  group: "RAG Server Configuration"
+
+- variable: service.type
+  label: "Service Type"
+  description: "Service type for RAG Server"
+  type: enum
+  default: "ClusterIP"
+  group: "RAG Server Configuration"
+  options:
+  - label: "ClusterIP"
+    value: "ClusterIP"
+  - label: "NodePort"
+    value: "NodePort"
+  - label: "LoadBalancer"
+    value: "LoadBalancer"
+
+# API Keys
+- variable: apiKeysSecret.create
+  label: "Create API Keys Secret"
+  description: "Create the secret containing API keys"
+  type: boolean
+  default: true
+  group: "API Keys"
+
+- variable: apiKeysSecret.ngcApiKey
+  label: "NGC API Key"
+  description: "API Key for NVIDIA NGC (required for image pull)"
+  type: password
+  default: ""
+  group: "API Keys"
+
+- variable: apiKeysSecret.llmApiKey
+  label: "LLM API Key"
+  description: "API Key for LLM service"
+  type: password
+  default: ""
+  group: "API Keys"
+
+- variable: apiKeysSecret.embeddingsApiKey
+  label: "Embeddings API Key"
+  description: "API Key for Embeddings service"
+  type: password
+  default: ""
+  group: "API Keys"
+
+# Models
+- variable: envVars.APP_LLM_MODELNAME
+  label: "LLM Model Name"
+  description: "Name of the LLM model to use"
+  type: string
+  default: "nvidia/llama-3.3-nemotron-super-49b-v1.5"
+  group: "Models"
+
+- variable: envVars.APP_EMBEDDINGS_MODELNAME
+  label: "Embeddings Model Name"
+  description: "Name of the Embeddings model to use"
+  type: string
+  default: "nvidia/llama-3.2-nv-embedqa-1b-v2"
+  group: "Models"
+
+- variable: envVars.APP_RANKING_MODELNAME
+  label: "Ranking Model Name"
+  description: "Name of the Ranking model to use"
+  type: string
+  default: "nvidia/llama-3.2-nv-rerankqa-1b-v2"
+  group: "Models"
+
+# Components
+- variable: ingestor-server.enabled
+  label: "Enable Ingestor Server"
+  description: "Deploy the Ingestor Server"
+  type: boolean
+  default: true
+  group: "Components"
+
+- variable: frontend.enabled
+  label: "Enable Frontend"
+  description: "Deploy the RAG Frontend"
+  type: boolean
+  default: true
+  group: "Components"
+
+- variable: eck-elasticsearch.enabled
+  label: "Enable Elasticsearch"
+  description: "Deploy Elasticsearch (ECK)"
+  type: boolean
+  default: false
+  group: "Components"
+
+# NIMs
+- variable: nimOperator.nim-llm.enabled
+  label: "Enable LLM NIM"
+  description: "Deploy local LLM NIM"
+  type: boolean
+  default: true
+  group: "Components"
+
+- variable: nimOperator.nvidia-nim-llama-32-nv-embedqa-1b-v2.enabled
+  label: "Enable Embedding NIM"
+  description: "Deploy local Embedding NIM"
+  type: boolean
+  default: true
+  group: "Components"
+
+- variable: nimOperator.nvidia-nim-llama-32-nv-rerankqa-1b-v2.enabled
+  label: "Enable Reranking NIM"
+  description: "Deploy local Reranking NIM"
+  type: boolean
+  default: true
+  group: "Components"
+
+# Ingestor Configuration
+- variable: nv-ingest.enabled
+  label: "Enable NV-Ingest"
+  description: "Enable NV-Ingest service"
+  type: boolean
+  default: true
+  group: "Ingestor"
+
+- variable: nv-ingest.milvusDeployed
+  label: "Deploy Milvus"
+  description: "Deploy Milvus vector database"
+  type: boolean
+  default: true
+  group: "Ingestor"

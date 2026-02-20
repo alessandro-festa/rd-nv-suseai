@@ -1,0 +1,30 @@
+nvidia-blueprint-vss:
+  global:
+    ngcImagePullSecretName: "ngc-secret"
+  
+  vss:
+    applicationSpecs:
+      vss-deployment:
+        containers:
+          vss:
+            env:
+              - name: VLM_MODEL_TO_USE
+                value: "cosmos-reason2"
+              - name: MODEL_PATH
+                value: "git:https://huggingface.co/nvidia/Cosmos-Reason2-8B"
+              - name: DISABLE_GUARDRAILS
+                value: "false"
+              - name: OPENAI_API_KEY_NAME
+                value: "VSS_OPENAI_API_KEY"
+              - name: NVIDIA_API_KEY_NAME
+                value: "VSS_NVIDIA_API_KEY"
+              - name: NGC_API_KEY_NAME
+                value: "VSS_NGC_API_KEY"
+              - name: TRT_LLM_MODE
+                value: "int4_awq"
+              - name: VLM_BATCH_SIZE
+                value: ""
+              - name: ENABLE_AUDIO
+                value: "false"
+              - name: LLM_MODEL
+                value: "meta/llama-3.1-70b-instruct"

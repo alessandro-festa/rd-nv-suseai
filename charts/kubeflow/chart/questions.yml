@@ -1,0 +1,140 @@
+categories:
+- name: "Kubeflow Components"
+  class: "default"
+- name: "Cert Manager"
+  class: "default"
+- name: "Istio"
+  class: "default"
+- name: "Security"
+  class: "default"
+
+questions:
+# Cert Manager Configuration
+- variable: certManager.enabled
+  label: "Enable Cert Manager"
+  description: "Install Cert Manager component"
+  type: boolean
+  default: true
+  group: "Cert Manager"
+
+- variable: certManagerKubeflowIssuer.enabled
+  label: "Enable Kubeflow Issuer"
+  description: "Install Kubeflow ClusterIssuer"
+  type: boolean
+  default: true
+  group: "Cert Manager"
+
+# Istio Configuration
+- variable: istioBase.enabled
+  label: "Enable Istio Base"
+  description: "Install Istio Base"
+  type: boolean
+  default: true
+  group: "Istio"
+
+- variable: istioInstall.enabled
+  label: "Enable Istio Install"
+  description: "Install Istio components"
+  type: boolean
+  default: true
+  group: "Istio"
+
+- variable: istioResources.enabled
+  label: "Enable Kubeflow Istio Resources"
+  description: "Install Kubeflow specific Istio resources"
+  type: boolean
+  default: true
+  group: "Istio"
+
+# Security (Dex, Oauth2-Proxy)
+- variable: dex.enabled
+  label: "Enable Dex"
+  description: "Install Dex for authentication"
+  type: boolean
+  default: true
+  group: "Security"
+
+- variable: oauth2Proxy.enabled
+  label: "Enable OAuth2 Proxy"
+  description: "Install OAuth2 Proxy"
+  type: boolean
+  default: true
+  group: "Security"
+
+- variable: kubeflowRoles.enabled
+  label: "Enable Kubeflow Roles"
+  description: "Install Kubeflow RBAC roles"
+  type: boolean
+  default: true
+  group: "Security"
+
+- variable: networkPolicies.enabled
+  label: "Enable Network Policies"
+  description: "Install Network Policies"
+  type: boolean
+  default: true
+  group: "Security"
+
+# Kubeflow Components
+- variable: centralDashboard.enabled
+  label: "Enable Central Dashboard"
+  description: "Install Kubeflow Central Dashboard"
+  type: boolean
+  default: true
+  group: "Kubeflow Components"
+
+- variable: admissionWebhook.enabled
+  label: "Enable Admission Webhook"
+  description: "Install Admission Webhook"
+  type: boolean
+  default: true
+  group: "Kubeflow Components"
+
+- variable: notebookController.enabled
+  label: "Enable Notebook Controller"
+  description: "Install Notebook Controller"
+  type: boolean
+  default: true
+  group: "Kubeflow Components"
+
+- variable: jupyterWebApp.enabled
+  label: "Enable Jupyter Web App"
+  description: "Install Jupyter Web App"
+  type: boolean
+  default: true
+  group: "Kubeflow Components"
+
+- variable: pvcViewerController.enabled
+  label: "Enable PVC Viewer Controller"
+  description: "Install PVC Viewer Controller"
+  type: boolean
+  default: true
+  group: "Kubeflow Components"
+
+- variable: volumesWebApp.enabled
+  label: "Enable Volumes Web App"
+  description: "Install Volumes Web App"
+  type: boolean
+  default: true
+  group: "Kubeflow Components"
+
+- variable: profiles.enabled
+  label: "Enable Profiles"
+  description: "Install Profiles Controller"
+  type: boolean
+  default: true
+  group: "Kubeflow Components"
+
+- variable: kubeflowPipelines.enabled
+  label: "Enable Pipelines"
+  description: "Install Kubeflow Pipelines"
+  type: boolean
+  default: true
+  group: "Kubeflow Components"
+
+- variable: exampleProfile.enabled
+  label: "Enable Example Profile"
+  description: "Create an example user profile"
+  type: boolean
+  default: true
+  group: "Kubeflow Components"
