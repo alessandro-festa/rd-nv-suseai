@@ -4,7 +4,7 @@
 annotations:
   license: Apache-2.0
 apiVersion: v2
-name: suse-ai-deployer
+name: suse-ai-minimal
 description: A Meta Helm chart for deploying SUSE AI components
 keywords:
   - ai
