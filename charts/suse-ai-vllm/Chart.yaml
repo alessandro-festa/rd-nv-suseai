@@ -1,0 +1,62 @@
+# SPDX-License-Identifier: APACHE-2.0
+#!BuildTag: charts/suse-ai-deployer:1.2.0-%RELEASE%
+#!BuildTag: charts/suse-ai-deployer:1.2.0
+annotations:
+  license: Apache-2.0
+apiVersion: v2
+name: suse-ai-deployer
+description: A Meta Helm chart for deploying SUSE AI components
+keywords:
+  - ai
+
+# A chart can be either an 'application' or a 'library' chart.
+#
+# Application charts are a collection of templates that can be packaged into versioned archives
+# to be deployed.
+#
+# Library charts provide useful utilities or functions for the chart developer. They're included as
+# a dependency of application charts to inject those utilities and functions into the rendering
+# pipeline. Library charts do not define any templates and therefore cannot be deployed.
+type: application
+
+# This is the chart version. This version number should be incremented each time you make changes
+# to the chart and its templates, including the app version.
+# Versions are expected to follow Semantic Versioning (https://semver.org/)
+version: 1.2.0
+
+# This is the version number of the application being deployed. This version number should be
+# incremented each time you make changes to the application. Versions are not expected to
+# follow Semantic Versioning. They should reflect the version the application is using.
+# It is recommended to use it with quotes.
+appVersion: "1.2.0"
+
+dependencies:
+  - name: milvus
+    repository: oci://dp.apps.rancher.io/charts
+    version: 5.0.13
+    condition: milvus.enabled
+  - name: ollama
+    version: 1.33.2
+    repository: oci://dp.apps.rancher.io/charts
+    condition: ollama.enabled
+  - name: open-webui
+    version: 8.19.1
+    repository: oci://dp.apps.rancher.io/charts
+    condition: open-webui.enabled
+  - name: pytorch
+    version: 0.3.2
+    repository: oci://dp.apps.rancher.io/charts
+    condition: pytorch.enabled
+  - name: vllm
+    version: 0.1.6
+    repository: oci://dp.apps.rancher.io/charts
+    condition: vllm.enabled
+  - name: open-webui-mcpo
+    version: 1.0.2
+    repository: oci://dp.apps.rancher.io/charts
+    condition: open-webui-mcpo.enabled
+home: https://apps.rancher.io/applications/suse-ai-deployer
+icon: https://apps.rancher.io/logos/suse-ai-deployer.png
+maintainers:
+  - url: https://www.suse.com/
+    name: SUSE LLC
