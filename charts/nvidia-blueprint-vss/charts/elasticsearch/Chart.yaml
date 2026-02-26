@@ -1,0 +1,6 @@
+apiVersion: v2
+appVersion: 2.1.0
+description: ElasticSearch database service for search and analytics
+name: elasticsearch
+type: application
+version: 2.1.0

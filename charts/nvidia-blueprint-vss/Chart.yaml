@@ -1,0 +1,54 @@
+apiVersion: v2
+dependencies:
+- name: vss
+  repository: ""
+  version: 2.4.1
+- condition: etcd.enabled
+  name: etcd
+  repository: ""
+  version: 2.1.0
+- condition: milvus-minio.enabled
+  name: milvus-minio
+  repository: ""
+  version: 2.1.0
+- condition: milvus.enabled
+  name: milvus
+  repository: ""
+  version: 2.1.0
+- condition: neo4j.enabled
+  name: neo4j
+  repository: ""
+  version: 2.1.0
+- condition: nim-llm.enabled
+  name: nim-llm
+  repository: ""
+  version: 2.1.0
+- condition: nemo-embedding.enabled
+  name: nemo-embedding
+  repository: ""
+  version: 2.1.0
+- condition: nemo-rerank.enabled
+  name: nemo-rerank
+  repository: ""
+  version: 2.1.0
+- condition: riva.enabled
+  name: riva
+  repository: ""
+  version: 2.3.0
+- condition: arango-db.enabled
+  name: arango-db
+  repository: ""
+  version: 2.1.0
+- condition: minio.enabled
+  name: minio
+  repository: ""
+  version: 2.1.0
+- condition: elasticsearch.enabled
+  name: elasticsearch
+  repository: ""
+  version: 2.1.0
+description: Video Search and Summarization Agent Blueprint
+name: nvidia-blueprint-vss
+icon: https://avatars.githubusercontent.com/u/178940881
+type: application
+version: 2.4.1

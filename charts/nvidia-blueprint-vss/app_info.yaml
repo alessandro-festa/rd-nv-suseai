@@ -1,0 +1,58 @@
+metrics: []
+
+
+secrets:
+- name: ngc-api-key
+  description: N/A
+  type: Kubernetes Secret
+  secretName: ngc-api-key-secret
+  secretKey: NGC_API_KEY
+  usedBy: []
+
+- name: graph-db-username
+  description: neo4j database username
+  type: Kubernetes Secret
+  secretName: graph-db-creds-secret
+  secretKey: username
+  usedBy:
+  - ucf.svc.neo4j v2.1.0
+
+- name: graph-db-password
+  description: neo4j database password
+  type: Kubernetes Secret
+  secretName: graph-db-creds-secret
+  secretKey: password
+  usedBy:
+  - ucf.svc.neo4j v2.1.0
+
+- name: arango-db-username
+  description: ArangoDB database username
+  type: Kubernetes Secret
+  secretName: arango-db-creds-secret
+  secretKey: username
+  usedBy:
+  - ucf.svc.arango-db v2.1.0
+
+- name: arango-db-password
+  description: ArangoDB database password
+  type: Kubernetes Secret
+  secretName: arango-db-creds-secret
+  secretKey: password
+  usedBy:
+  - ucf.svc.arango-db v2.1.0
+
+- name: minio-access-key
+  description: MinIO access key (username)
+  type: Kubernetes Secret
+  secretName: minio-creds-secret
+  secretKey: access-key
+  usedBy:
+  - ucf.svc.minio v2.1.0
+
+- name: minio-secret-key
+  description: MinIO secret key (password)
+  type: Kubernetes Secret
+  secretName: minio-creds-secret
+  secretKey: secret-key
+  usedBy:
+  - ucf.svc.minio v2.1.0
