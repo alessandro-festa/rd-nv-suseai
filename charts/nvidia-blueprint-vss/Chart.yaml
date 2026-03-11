@@ -47,7 +47,7 @@ dependencies:
   name: elasticsearch
   repository: ""
   version: 1.0.2
-description: Video Search and Summarization Agent Blueprint
+description: Ready to QA Stack (Jin v1.0.1 updated by Alex v1.0.2)
 name: nim-nvidia-llama-3-2-nemoretriever-1b-vlm-embed-v1
 icon: https://avatars.githubusercontent.com/u/178940881
 type: application
