@@ -7,7 +7,7 @@ apiVersion: v2
 name: suse-ai-machine-learning
 description: A Meta Helm chart for deploying SUSE AI components
 keywords:
-  - ai
+  - suse
 
 # A chart can be either an 'application' or a 'library' chart.
 #
